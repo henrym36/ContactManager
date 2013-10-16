@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+    <title>Import CSV</title>
+    <style>
+		table.center {
+    		margin-left:auto; 
+    		margin-right:auto;
+    		position: relative; 
+			top: 100px; 
+  		}
+	</style>
+    </h:head>
+        <h:form enctype="multipart/form-data">
+        	<h:messages id="errmsg" globalOnly="true" showSummary="true" showDetail="false" styleClass="startUpMessages"/>
+            <table border="1" class="center">
+        		<tr>
+        			<th colspan="2">
+        				<h3>Select File to Import</h3>
+        			</th>
+        		</tr>
+        		<tr>
+        			<td>
+        				<h:inputFile id="file" value="#{importFile.file}" validator="#{importFile.validateFile}" />
+        			</td>
+        			<td>
+        				<h:commandButton value="Load File" action="#{importFile.loadFile}"/>
+        			</td>
+        		</tr>
+			</table>
+        </h:form>
+</html>

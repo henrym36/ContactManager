@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+
+    <h:head>
+    <title>Contact Manager</title>
+    <style>
+    	input {
+  			width:200px;
+		}
+		table.center {
+    		margin-left:auto; 
+    		margin-right:auto;
+    		position: relative; 
+			top: 100px; 
+  		}
+	</style>
+    
+    </h:head>
+    <h:body>
+        <h:form enctype="multipart/form-data">
+        <table border="1" class="center">
+        	<tr>
+        		<th>
+    				<h3>Contact Manager</h3>
+            		<h:panelGrid columns="1">
+                		<h:commandButton value="Import CSV" action="loadCSV?faces-redirect=true"/>
+                		<h:commandButton value="View Contacts" action="#{createList.createContactList}"/>
+                		<h:commandButton value="View Companies" action="#{createList.createCompanyList}"/>
+            		</h:panelGrid>
+        		</th>
+        	</tr>
+        </table>
+        </h:form>
+	</h:body>
+
+</html>

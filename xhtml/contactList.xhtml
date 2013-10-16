@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+ 
+    <h:head>
+        <title>Contact List</title>
+    </h:head>
+    <h:body>
+    	<h3>Contact List</h3>
+    	<h:form>
+    	    <h:commandButton value="Sort by Name" action="#{createList.sortTableByName}"/>
+    	    <h:commandButton value="Sort by Company" action="#{createList.sortTableByCompany}"/>
+    		<h:commandButton value="Menu" action="menu"/>
+    	    <h:dataTable value="#{createList.contactList}" var="contact" border="1" cellpadding="3">
+    			<h:column>
+    				<f:facet name="header">Name</f:facet>
+    				<h:outputText value="#{contact.name}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">User Id</f:facet>
+    				<h:outputText value="#{contact.userId}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Title</f:facet>
+    				<h:outputText value="#{contact.title}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Member Id</f:facet>
+    				<h:outputText value="#{contact.memberId}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Company</f:facet>
+    				<h:outputText value="#{contact.company}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Joined Group On</f:facet>
+    				<h:outputText value="#{contact.joinedOn}">
+    					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+    				</h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Last Visited Group On</f:facet>
+    				<h:outputText value="#{contact.lastVisited}">
+    					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+    				</h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Last Attended</f:facet>
+    				<h:outputText value="#{contact.lastAttended}">
+    					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+    				</h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Total RSVP</f:facet>
+    				<h:outputText value="#{contact.totalRSVP}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">RSVP Yes</f:facet>
+    				<h:outputText value="#{contact.RSVPYes}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">RSVP Maybe</f:facet>
+    				<h:outputText value="#{contact.RSVPMaybe}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">RSVP No</f:facet>
+    				<h:outputText value="#{contact.RSVPNo}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Meetups Attended</f:facet>
+    				<h:outputText value="#{contact.attended}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">No Shows</f:facet>
+    				<h:outputText value="#{contact.noShow}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Intro</f:facet>
+    				<h:outputText value="#{contact.intro}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Photo</f:facet>
+    				<h:outputText value="#{contact.photo}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Assistant Organizer</f:facet>
+    				<h:outputText value="#{contact.assistant}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Mailing List</f:facet>
+    				<h:outputText value="#{contact.mailingList}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">URL of Member Profile</f:facet>
+    				<h:outputText value="#{contact.url}"></h:outputText>
+    			</h:column>	
+    		</h:dataTable>
+    	</h:form>
+    </h:body>
+</html>

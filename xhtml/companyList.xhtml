@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+ 
+    <h:head>
+        <title>Company List</title>
+    </h:head>
+    <h:body>
+    	<h3>Company List</h3>
+    	<h:form>
+    	   	<h:commandButton value="Menu" action="menu"/>
+    	    <h:dataTable value="#{createList.companyList}" var="company" border="1" cellpadding="3">
+    			<h:column>
+    				<f:facet name="header">Name</f:facet>
+    				<h:outputText value="#{company.name}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Address</f:facet>
+    				<h:outputText value="#{company.address}"></h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Phone Number</f:facet>
+    				<h:outputText value="#{company.phoneNum}"></h:outputText>
+    			</h:column>
+    		</h:dataTable>
+    	</h:form>
+    </h:body>
+</html>
